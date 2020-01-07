@@ -7,3 +7,4 @@
 References
 - Simple setup https://dotnetplaybook.com/deploy-a-net-core-api-with-docker/
 - Docker commands https://docs.docker.com/engine/reference/commandline/run/
+- Docker Hub https://hub.docker.com/ 
