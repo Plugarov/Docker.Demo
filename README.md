@@ -16,6 +16,9 @@ docker images
 docker rm (container)  
 docker rmi (image)  
 
+#### Images
+MS SQL https://hub.docker.com/_/microsoft-mssql-server
+
 ### References
 - Setup on IIS using VSCode https://dotnetplaybook.com/deploy-a-net-core-api-with-docker/
 - Docker for windows https://docs.docker.com/docker-for-windows/
