@@ -25,4 +25,3 @@ MS SQL https://hub.docker.com/_/microsoft-mssql-server
 - Docker for windows https://docs.docker.com/docker-for-windows/
 - Docker commands https://docs.docker.com/engine/reference/commandline/run/
 - Docker Hub https://hub.docker.com/ 
-- MS SQL https://hub.docker.com/_/microsoft-mssql-server
