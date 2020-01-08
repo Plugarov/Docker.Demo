@@ -4,8 +4,9 @@
 2. Run multiple Web API's
 3. Setup MS SQL
 
-#### Ubuntu on Windows using VirtualBox
-https://www.youtube.com/watch?v=JgurvumloHk
+#### Ubuntu on Windows 
+https://www.youtube.com/watch?v=JgurvumloHk  
+VirtualBox www.virtualbox.org  
 
 #### Docker commands
 docker build -t simpleapi (csproj name) .  
