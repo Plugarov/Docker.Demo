@@ -3,7 +3,7 @@
 1. Setup and run Docker
 2. Run multiple Web API's
 3. Setup MS SQL
-4. Setup Message broker
+4. Setup message broker
 
 #### Ubuntu on Windows 
 https://www.youtube.com/watch?v=JgurvumloHk  
