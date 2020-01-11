@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=JgurvumloHk
 VirtualBox www.virtualbox.org  
 
 ##### Commands  
-Uninstall docker  
+Uninstall  
 dpkg -l | grep -i docker  
 sudo apt-get purge docker-ce  
 sudo rm -rf /var/lib/docker  
@@ -18,7 +18,7 @@ sudo rm -rf /var/lib/docker
 
 
 #### Docker 
-##### Commands
+##### Commands  
 
 Start  
 service --status-all  
@@ -28,7 +28,7 @@ Login
 sudo docker login  
 sudo usermod -aG docker $USER (access without sudo)  
 
-Manage
+Manage  
 docker build -t simpleapi (csproj name) .  
 docker run -d -p 1236:80 simpleapi (run in background)  
 docker ps (containers)  
