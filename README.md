@@ -16,7 +16,7 @@ sudo apt-get purge docker-ce
 sudo rm -rf /var/lib/docker  
 
 #### Docker 
-#####Commands
+##### Commands
 docker build -t simpleapi (csproj name) .  
 docker run -d -p 1236:80 simpleapi (run in background)  
 docker ps (containers)  
