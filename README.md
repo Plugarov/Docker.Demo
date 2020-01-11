@@ -27,6 +27,7 @@ sudo service docker start
 Login  
 sudo docker login  
 sudo usermod -aG docker $USER (access without sudo)  
+sudo -i
 
 Manage  
 docker build -t simpleapi (csproj name) .  
