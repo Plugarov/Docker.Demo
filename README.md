@@ -20,6 +20,7 @@ sudo service docker start
 
 Login  
 sudo docker login  
+sudo usermod -aG docker $USER (access without sudo)
 
 #### Docker 
 ##### Commands
