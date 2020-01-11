@@ -37,7 +37,7 @@ docker images
 docker rm (container)  
 docker rmi (image)  
 
-Publish
+Publish  
 docker tag docker201 iankesh/docker201  
 docker push iankesh/docker201  
 
