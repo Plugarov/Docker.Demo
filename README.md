@@ -2,7 +2,7 @@
 
 1. Setup and run Docker
 2. Run multiple Web API's
-3. Setup MS SQL
+3. Setup Microsoft SQL Server  
 4. Setup message broker
 
 #### Ubuntu
@@ -14,6 +14,12 @@ Uninstall docker
 dpkg -l | grep -i docker  
 sudo apt-get purge docker-ce  
 sudo rm -rf /var/lib/docker  
+
+service --status-all  
+sudo service docker start  
+
+Login  
+sudo docker login  
 
 #### Docker 
 ##### Commands
