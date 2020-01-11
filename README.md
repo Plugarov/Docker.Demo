@@ -9,7 +9,7 @@
 https://www.youtube.com/watch?v=JgurvumloHk  
 VirtualBox www.virtualbox.org  
 
-Commands
+Commands  
 Uninstall docker  
 dpkg -l | grep -i docker  
 sudo apt-get purge docker-ce  
