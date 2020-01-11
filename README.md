@@ -9,6 +9,10 @@
 https://www.youtube.com/watch?v=JgurvumloHk  
 VirtualBox www.virtualbox.org  
 
+Uninstall docker
+sudo apt-get purge docker-ce
+sudo rm -rf /var/lib/docker
+
 #### Docker commands
 docker build -t simpleapi (csproj name) .  
 docker run -d -p 1236:80 simpleapi (run in background)  
