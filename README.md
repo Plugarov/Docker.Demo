@@ -22,12 +22,11 @@ sudo rm -rf /var/lib/docker
 
 Start  
 service --status-all  
-sudo service docker start  
+service docker start  
 
 Login  
-sudo docker login  
-sudo usermod -aG docker $USER (access without sudo)  
-sudo -i
+docker login  
+usermod -aG docker $USER (access without sudo)  
 
 Manage  
 docker build -t simpleapi (csproj name) .  
