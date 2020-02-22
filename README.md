@@ -37,7 +37,7 @@ docker ps -a (all)
 docker images  
 docker rm (container)  
 docker rmi (image)  
-
+docker rmi $(docker images -f "dangling=true" -q)  
 Publish  
 docker tag docker201 iankesh/docker201  
 docker push iankesh/docker201  
