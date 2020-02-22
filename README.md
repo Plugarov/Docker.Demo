@@ -1,4 +1,4 @@
-## Docker basics and notes
+## Docker & RabbitMQ basics and notes
 
 1. Setup and run Docker
 2. Run multiple Web API's
@@ -38,9 +38,14 @@ docker images
 docker rm (container)  
 docker rmi (image)  
 docker rmi $(docker images -f "dangling=true" -q)  
+
 Publish  
 docker tag docker201 iankesh/docker201  
 docker push iankesh/docker201  
+
+#### RabbitMQ  
+##### Commands  
+docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=root -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 ##### Images
 MS SQL https://hub.docker.com/_/microsoft-mssql-server
@@ -50,3 +55,5 @@ MS SQL https://hub.docker.com/_/microsoft-mssql-server
 - Docker for windows https://docs.docker.com/docker-for-windows/
 - Docker commands https://docs.docker.com/engine/reference/commandline/run/
 - Docker Hub https://hub.docker.com/ 
+- RabbitMQ https://www.rabbitmq.com/tutorials/tutorial-one-dotnet.html  
+- RabbitMQ https://registry.hub.docker.com/_/rabbitmq/  
