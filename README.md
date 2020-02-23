@@ -35,7 +35,8 @@ docker push iankesh/docker201
 docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=root -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 ##### Images
-MS SQL https://hub.docker.com/_/microsoft-mssql-server
+MS SQL https://hub.docker.com/_/microsoft-mssql-server  
+Rabbit MQ https://hub.docker.com/_/rabbitmq/
 
 ### References
 - Setup on IIS using VSCode https://dotnetplaybook.com/deploy-a-net-core-api-with-docker/
