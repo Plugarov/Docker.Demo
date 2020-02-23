@@ -5,15 +5,6 @@
 3. Setup Microsoft SQL Server  
 4. Setup message broker
 
-#### Ubuntu
-##### Commands  
-Uninstall  
-dpkg -l | grep -i docker  
-sudo apt-get purge docker-ce  
-sudo rm -rf /var/lib/docker  
-
-
-
 #### Docker 
 ##### Commands  
 
