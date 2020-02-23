@@ -6,9 +6,6 @@
 4. Setup message broker
 
 #### Ubuntu
-https://www.youtube.com/watch?v=JgurvumloHk  
-VirtualBox www.virtualbox.org  
-
 ##### Commands  
 Uninstall  
 dpkg -l | grep -i docker  
