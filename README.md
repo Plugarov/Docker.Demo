@@ -34,7 +34,14 @@ docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -
 use VS Code SQL Server extension for db managing   
 https://hub.docker.com/_/microsoft-mssql-server  
 https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet  
-https://www.nuget.org/packages/dotnet-ef/  
+https://www.nuget.org/packages/dotnet-ef/   
+
+##### CheatSheet
+sudo docker run -d -p 5000:80 xx  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Aa123456' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest 
+dotnet ef migrations add {fix model}  
+dotnet ef database update  
+sudo docker run -d -p 5000:80 xx  
+sudo docker build -t xx .   
 
 #### Images
 MS SQL https://hub.docker.com/_/microsoft-mssql-server  
