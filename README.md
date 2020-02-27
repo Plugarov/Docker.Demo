@@ -8,10 +8,6 @@
 #### Docker 
 ##### Commands  
 
-Start  
-service --status-all  
-service docker start  
-
 Login  
 docker login  
 usermod -aG docker $USER (access without sudo)  
