@@ -36,6 +36,8 @@ docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -
 
 #### Sql Server  
 use VS Code SQL Server extension for db managing
+https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet
+https://www.nuget.org/packages/dotnet-ef/
 
 #### Images
 MS SQL https://hub.docker.com/_/microsoft-mssql-server  
