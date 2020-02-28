@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using RabbitMQ.Client;  
+using System.Linq;
+using RabbitMQ.Client;
+using VehicleManagementAPI.DataAccess;
+using VehicleManagementAPI.Model;
 
 namespace VehicleManagementAPI.Controllers
 {
@@ -10,11 +12,11 @@ namespace VehicleManagementAPI.Controllers
     [Route("[controller]")]
     public class VehicleController : ControllerBase
     {
-        private readonly ILogger<VehicleController> _logger;
+        private readonly VehicleManagementDBContext dbContext;
 
-        public VehicleController(ILogger<VehicleController> logger)
+        public VehicleController(VehicleManagementDBContext dbContext)
         {
-            _logger = logger;
+            this.dbContext = dbContext;
         }
 
         [HttpGet]
@@ -22,33 +24,40 @@ namespace VehicleManagementAPI.Controllers
         {
             try
             {
-                var factory = new ConnectionFactory{
+                dbContext.Vehicle.Add(new Vehicle(){ CustomerId = 1, VIN = "JWQ34J23" });
+                dbContext.SaveChanges();
+
+                var all = dbContext.Vehicle.ToList();
+
+                var factory = new ConnectionFactory
+                {
                     HostName = "172.17.0.1",
                     Port = 5672,
                     UserName = "root",
                     Password = "root",
-                }; 
-    
-                using(var connection = factory.CreateConnection())
-                using(var model = connection.CreateModel()){
-                    model.QueueDeclare("testQueue", 
+                };
+
+                using (var connection = factory.CreateConnection())
+                using (var model = connection.CreateModel())
+                {
+                    model.QueueDeclare("testQueue",
                                        durable: false,
                                        exclusive: false,
                                        autoDelete: false,
                                        arguments: null);
-                                       
+
                     var message = "Message, my message.";
                     var body = Encoding.UTF8.GetBytes(message);
 
                     model.BasicPublish(exchange: string.Empty,
-                                       routingKey: "testQueue", 
+                                       routingKey: "testQueue",
                                        basicProperties: null,
                                        body: body);
                 }
 
-                return "Done";
+                return "Done1";
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return ex.ToString();
             }
