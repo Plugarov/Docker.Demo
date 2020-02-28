@@ -38,7 +38,7 @@ https://www.nuget.org/packages/dotnet-ef/
 
 ##### Cheat sheet for code first
 sudo docker run -d -p 5000:80 xx  
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Aa123456' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest   
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Aa123456' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest 
 dotnet ef migrations add {fix model}   
 dotnet ef database update  
 sudo docker run -d -p 5000:80 xx  
