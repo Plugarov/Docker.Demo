@@ -24,6 +24,7 @@ namespace VehicleManagementAPI.Controllers
         {
             try
             {
+                
                 dbContext.Vehicle.Add(new Vehicle(){ CustomerId = 1, VIN = "JWQ34J23" });
                 dbContext.SaveChanges();
 
