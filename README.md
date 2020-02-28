@@ -5,21 +5,8 @@
 3. Setup Microsoft SQL Server  
 4. Setup message broker
 
-#### Ubuntu
-##### Commands  
-Uninstall  
-dpkg -l | grep -i docker  
-sudo apt-get purge docker-ce  
-sudo rm -rf /var/lib/docker  
-
-
-
 #### Docker 
 ##### Commands  
-
-Start  
-service --status-all  
-service docker start  
 
 Login  
 docker login  
@@ -43,10 +30,24 @@ docker push iankesh/docker201
 ##### Commands  
 docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=root -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
-##### Images
-MS SQL https://hub.docker.com/_/microsoft-mssql-server
+#### Sql Server  
+use VS Code SQL Server extension for db managing   
+https://hub.docker.com/_/microsoft-mssql-server  
+https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet  
+https://www.nuget.org/packages/dotnet-ef/   
 
-### References
+##### Cheat sheet for code first
+sudo docker run -d -p 5000:80 xx  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Aa123456' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest   
+dotnet ef migrations add {fix model}   
+dotnet ef database update  
+sudo docker run -d -p 5000:80 xx  
+sudo docker build -t xx .   
+
+#### Images
+MS SQL https://hub.docker.com/_/microsoft-mssql-server  
+Rabbit MQ https://hub.docker.com/_/rabbitmq/
+
+#### References
 - Setup on IIS using VSCode https://dotnetplaybook.com/deploy-a-net-core-api-with-docker/
 - Docker for windows https://docs.docker.com/docker-for-windows/
 - Docker commands https://docs.docker.com/engine/reference/commandline/run/
