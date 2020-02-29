@@ -48,7 +48,10 @@ namespace VehicleManagementAPI
                 endpoints.MapControllers();
             });
 
-
+            using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetService<VehicleManagementDBContext>().MigrateDB();
+            }        
         }
     }
 }

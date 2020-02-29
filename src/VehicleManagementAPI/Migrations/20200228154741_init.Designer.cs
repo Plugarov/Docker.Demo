@@ -9,8 +9,8 @@ using VehicleManagementAPI.DataAccess;
 namespace VehicleManagementAPI.Migrations
 {
     [DbContext(typeof(VehicleManagementDBContext))]
-    [Migration("20200227152248_{fixModel}")]
-    partial class fixModel
+    [Migration("20200228154741_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

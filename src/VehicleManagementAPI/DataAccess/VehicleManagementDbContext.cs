@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VehicleManagementAPI.Model;
+using System;
+using Polly;
 
 namespace VehicleManagementAPI.DataAccess
 {
@@ -19,6 +21,14 @@ namespace VehicleManagementAPI.DataAccess
             builder.Entity<Vehicle>().Property(s => s.CustomerId).IsRequired();
             builder.Entity<Vehicle>().ToTable("Vehicle");
             base.OnModelCreating(builder);
+        }
+
+        public void MigrateDB()
+        {
+            Policy
+                .Handle<Exception>()
+                .WaitAndRetry(1, r => TimeSpan.FromSeconds(1))
+                .Execute(() => Database.Migrate());
         }
     }
 }

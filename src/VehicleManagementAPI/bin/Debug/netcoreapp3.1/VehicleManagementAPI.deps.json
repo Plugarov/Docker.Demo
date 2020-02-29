@@ -10,7 +10,7 @@
       "NETCOREAPP",
       "NETCOREAPP3_1"
     ],
-    "languageVersion": "",
+    "languageVersion": "8.0",
     "platform": "",
     "allowUnsafe": false,
     "warningsAsErrors": false,
@@ -24,10 +24,12 @@
     ".NETCoreApp,Version=v3.1": {
       "VehicleManagementAPI/1.0.0": {
         "dependencies": {
+          "Infrastructure.Messaging": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.1",
           "Microsoft.EntityFrameworkCore.Tools.DotNet": "2.1.0-preview1-final",
+          "Polly": "7.2.0",
           "RabbitMQ.Client": "6.0.0-rc1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -303,6 +305,17 @@
         },
         "compile": {
           "VehicleManagementAPI.dll": {}
+        }
+      },
+      "Infrastructure.Messaging/1.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Infrastructure.Messaging.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Infrastructure.Messaging.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
@@ -699,6 +712,17 @@
         },
         "compile": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {}
         }
       },
       "RabbitMQ.Client/6.0.0-rc1": {
@@ -2983,6 +3007,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Infrastructure.Messaging/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rc37MTKagrwNHVQ9bypnyk8lpb650b32I4Z0BAB38EfCUzK4WUe4pr3Bsh7YtoHLUV6syGfvqkTFfHnzRP/pAw==",
+      "path": "infrastructure.messaging/1.0.0",
+      "hashPath": "infrastructure.messaging.1.0.0.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -3213,6 +3244,13 @@
       "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
+    },
+    "Polly/7.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fbtSRyqVSd5AS7O4Pm2Mnw7zKKJk7Z3rOfNnKSTfPkTxM8Z1JJFZzzjqLAOTG6AyUkormSWMO2AhdlygF/384Q==",
+      "path": "polly/7.2.0",
+      "hashPath": "polly.7.2.0.nupkg.sha512"
     },
     "RabbitMQ.Client/6.0.0-rc1": {
       "type": "package",

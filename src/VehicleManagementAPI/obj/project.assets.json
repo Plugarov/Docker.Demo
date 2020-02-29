@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Infrastructure.Messaging/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Infrastructure.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Infrastructure.Messaging.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
         "type": "package",
         "compile": {
@@ -572,6 +581,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {}
         }
       },
       "RabbitMQ.Client/6.0.0-rc1": {
@@ -1612,6 +1630,18 @@
     }
   },
   "libraries": {
+    "Infrastructure.Messaging/1.0.0": {
+      "sha512": "Rc37MTKagrwNHVQ9bypnyk8lpb650b32I4Z0BAB38EfCUzK4WUe4pr3Bsh7YtoHLUV6syGfvqkTFfHnzRP/pAw==",
+      "type": "package",
+      "path": "infrastructure.messaging/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "infrastructure.messaging.1.0.0.nupkg.sha512",
+        "infrastructure.messaging.nuspec",
+        "lib/netstandard2.0/Infrastructure.Messaging.dll"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
       "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
       "type": "package",
@@ -2669,6 +2699,29 @@
         "newtonsoft.json.10.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Polly/7.2.0": {
+      "sha512": "fbtSRyqVSd5AS7O4Pm2Mnw7zKKJk7Z3rOfNnKSTfPkTxM8Z1JJFZzzjqLAOTG6AyUkormSWMO2AhdlygF/384Q==",
+      "type": "package",
+      "path": "polly/7.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Polly.dll",
+        "lib/net461/Polly.pdb",
+        "lib/net461/Polly.xml",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net472/Polly.xml",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.7.2.0.nupkg.sha512",
+        "polly.nuspec"
       ]
     },
     "RabbitMQ.Client/6.0.0-rc1": {
@@ -6116,10 +6169,12 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Infrastructure.Messaging >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Tools.DotNet >= 2.1.0-preview1-final",
+      "Polly >= 7.2.0",
       "RabbitMQ.Client >= 6.0.0-rc1"
     ]
   },
@@ -6158,6 +6213,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Infrastructure.Messaging": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -6175,6 +6234,10 @@
           "Microsoft.EntityFrameworkCore.Tools.DotNet": {
             "target": "Package",
             "version": "[2.1.0-preview1-final, )"
+          },
+          "Polly": {
+            "target": "Package",
+            "version": "[7.2.0, )"
           },
           "RabbitMQ.Client": {
             "target": "Package",

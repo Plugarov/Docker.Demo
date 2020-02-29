@@ -1,22 +1,26 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using RabbitMQ.Client;
+using Infrastructure.Messaging;
+using VehicleManagementAPI.Commands;
 using VehicleManagementAPI.DataAccess;
 using VehicleManagementAPI.Model;
+using VehicleManagementAPI.Events;
 
 namespace VehicleManagementAPI.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class VehicleController : ControllerBase
     {
-        private readonly VehicleManagementDBContext dbContext;
+        private readonly VehicleManagementDBContext _dbContext;
+        // private readonly IMessagePublisher _messagePublisher;
 
         public VehicleController(VehicleManagementDBContext dbContext)
         {
-            this.dbContext = dbContext;
+            _dbContext = dbContext;
+            // _messagePublisher = messagePublisher;
         }
 
         [HttpGet]
@@ -24,11 +28,19 @@ namespace VehicleManagementAPI.Controllers
         {
             try
             {
-                
-                dbContext.Vehicle.Add(new Vehicle(){ CustomerId = 1, VIN = "JWQ34J23" });
-                dbContext.SaveChanges();
+                _dbContext.Vehicle.Add(new Vehicle() { CustomerId = 1, VIN = "JWQ34J23" });
+                _dbContext.SaveChanges();
 
-                var all = dbContext.Vehicle.ToList();
+                var all = _dbContext.Vehicle.ToList();
+
+
+                var command = new RegisterVehicle(Guid.NewGuid(), "asd", true, 4);
+
+                var easd =  new Infrastructure.Messaging.Event();
+
+
+                var e = VehicleRegistered.FromCommand(command);
+                // await _messagePublisher.PublishMessageAsync(e.MessageType, e, "");
 
                 var factory = new ConnectionFactory
                 {
@@ -56,7 +68,7 @@ namespace VehicleManagementAPI.Controllers
                                        body: body);
                 }
 
-                return "Done1";
+                return "Done";
             }
             catch (Exception ex)
             {
