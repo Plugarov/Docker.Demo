@@ -32,6 +32,7 @@ docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -
 
 #### Sql Server  
 connect - docker exec -it [container id] /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P [pass]
+commands - https://www.sqlshack.com/working-sql-server-command-line-sqlcmd/
 
 use VS Code SQL Server extension for db managing   
 https://hub.docker.com/_/microsoft-mssql-server  
