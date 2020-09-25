@@ -31,6 +31,8 @@ docker push iankesh/docker201
 docker run -d --hostname my-rabbit --name Rabbit -e RABBITMQ_DEFAULT_USER=root -e RABBITMQ_DEFAULT_PASS=root -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 #### Sql Server  
+connect - docker exec -it [container id] /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P [pass]
+
 use VS Code SQL Server extension for db managing   
 https://hub.docker.com/_/microsoft-mssql-server  
 https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet  
